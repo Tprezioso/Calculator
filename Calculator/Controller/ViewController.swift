@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         if let numValue = sender.currentTitle {
             
             if isFinishedTypingNumber {
+                displayLabel.text = numValue
                 isFinishedTypingNumber = false
             } else if !isFinishedTypingNumber {
                 displayLabel.text = displayLabel.text! + numValue
