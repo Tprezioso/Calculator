@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FFCEEE421ED25F400E9E2B3 /* CaluculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFCEEE321ED25F400E9E2B3 /* CaluculatorLogic.swift */; };
 		ADB196212146629E00C5317F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB196202146629E00C5317F /* AppDelegate.swift */; };
 		ADB196232146629E00C5317F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB196222146629E00C5317F /* ViewController.swift */; };
 		ADB196262146629E00C5317F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB196242146629E00C5317F /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9FFCEEE321ED25F400E9E2B3 /* CaluculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaluculatorLogic.swift; sourceTree = "<group>"; };
 		ADB1961D2146629E00C5317F /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB196202146629E00C5317F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB196222146629E00C5317F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9FFCEEE521ED260400E9E2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FFCEEE321ED25F400E9E2B3 /* CaluculatorLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ADB196142146629E00C5317F = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB196202146629E00C5317F /* AppDelegate.swift */,
+				9FFCEEE521ED260400E9E2B3 /* Model */,
 				9FFCEEE121E7E49700E9E2B3 /* Controller */,
 				9FFCEEE221E7E4A600E9E2B3 /* View */,
 				ADB19627214662A000C5317F /* Assets.xcassets */,
@@ -152,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB196232146629E00C5317F /* ViewController.swift in Sources */,
+				9FFCEEE421ED25F400E9E2B3 /* CaluculatorLogic.swift in Sources */,
 				ADB196212146629E00C5317F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
