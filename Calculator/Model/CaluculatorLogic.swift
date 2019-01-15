@@ -10,19 +10,25 @@ import Foundation
 
 struct CalculatorLogic {
    
-    var number : Double
+    private var number : Double?
+
+    private var intermediateCalulation: (n1: Double, calcMethod: String)?
     
-    init(number:Double) {
+    mutating func setNumber(_ number: Double) {
         self.number = number
     }
     
-    func calculate(symbol: String) -> Double? {
-        if symbol == "+/-" {
-            return number * -1
-        } else if symbol == "AC" {
-            return 0
-        } else if symbol == "%" {
-            return number / 100
+    mutating func calculate(symbol: String) -> Double? {
+        if let n = number {
+            if symbol == "+/-" {
+                return n * -1
+            } else if symbol == "AC" {
+                return 0
+            } else if symbol == "%" {
+                return n / 100
+            } else if symbol == "+" {
+                intermediateCalulation = (n1: number, calcMethod: symbol)
+            }
         }
         return nil
     }
