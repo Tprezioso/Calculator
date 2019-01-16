@@ -26,11 +26,35 @@ struct CalculatorLogic {
                 return 0
             } else if symbol == "%" {
                 return n / 100
-            } else if symbol == "+" {
-                intermediateCalulation = (n1: number, calcMethod: symbol)
+            } else if symbol == "=" {
+                return performTwoNumberCalculation(n2: n)
+            } else {
+                intermediateCalulation = (n1: n, calcMethod: symbol)
             }
         }
         return nil
+    }
+    
+    private func performTwoNumberCalculation(n2: Double) -> Double {
+        var answer = 0.0
+        
+        if let n1 = intermediateCalulation?.n1, let operation = intermediateCalulation?.calcMethod {
+            switch operation {
+            case "+":
+                answer = n1 + n2
+            case "-":
+                answer = n1 - n2
+            case "×":
+                answer = n1 * n2
+            case "÷":
+                answer = n1 / n2
+    
+            default:
+                break
+            }
+            
+        }
+        return answer
     }
 
 }
