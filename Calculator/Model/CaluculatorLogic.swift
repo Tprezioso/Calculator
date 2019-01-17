@@ -20,41 +20,40 @@ struct CalculatorLogic {
     
     mutating func calculate(symbol: String) -> Double? {
         if let n = number {
-            if symbol == "+/-" {
+            switch symbol {
+            case "+/-":
                 return n * -1
-            } else if symbol == "AC" {
+            case "AC" :
                 return 0
-            } else if symbol == "%" {
+            case "%" :
                 return n / 100
-            } else if symbol == "=" {
+            case "=" :
                 return performTwoNumberCalculation(n2: n)
-            } else {
+            default:
                 intermediateCalulation = (n1: n, calcMethod: symbol)
             }
         }
         return nil
     }
     
-    private func performTwoNumberCalculation(n2: Double) -> Double {
-        var answer = 0.0
-        
+    private func performTwoNumberCalculation(n2: Double) -> Double? {
         if let n1 = intermediateCalulation?.n1, let operation = intermediateCalulation?.calcMethod {
             switch operation {
             case "+":
-                answer = n1 + n2
+                return n1 + n2
             case "-":
-                answer = n1 - n2
+                return n1 - n2
             case "×":
-                answer = n1 * n2
+                return n1 * n2
             case "÷":
-                answer = n1 / n2
+                return n1 / n2
     
             default:
-                break
+                fatalError("The operationg passed in does not match any of the cases")
             }
             
         }
-        return answer
+        return nil
     }
 
 }
