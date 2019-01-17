@@ -29,8 +29,6 @@ class ViewController: UIViewController {
     private var calculator = CalculatorLogic()
 
     @IBAction func calcButtonPressed(_ sender: UIButton) {
-        
-        //What should happen when a non-number button is pressed
         isFinishedTypingNumber = true
         
         calculator.setNumber(displayValue)
@@ -44,23 +42,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func numButtonPressed(_ sender: UIButton) {
-        
-        //What should happen when a number is entered into the keypad
         if let numValue = sender.currentTitle {
             
             if isFinishedTypingNumber {
                 displayLabel.text = numValue
                 isFinishedTypingNumber = false
             } else {
-                
-                // If statement used to protect from having multipal decimal points
                 if numValue == "." {
                     let isInt = floor(displayValue) == displayValue
                     if !isInt {
                         return
                     }
                 }
- 
                 displayLabel.text = displayLabel.text! + numValue
             }
             
