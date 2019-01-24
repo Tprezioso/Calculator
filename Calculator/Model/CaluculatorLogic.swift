@@ -28,6 +28,7 @@ struct CalculatorLogic {
             case "%" :
                 return n / 100
             case "=" :
+                
                 return performTwoNumberCalculation(n2: n)
             default:
                 intermediateCalulation = (n1: n, calcMethod: symbol)

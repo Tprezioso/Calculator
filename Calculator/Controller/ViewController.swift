@@ -24,8 +24,15 @@ class ViewController: UIViewController {
             return number
         }
         set {
-            displayLabel.text = String(newValue)
+            
+            displayLabel.text = String(forTrailingZero(temp: newValue))
         }
+    }
+    
+    // Fix for having a decimal place 0 when hitting equals button
+    func forTrailingZero(temp: Double) -> String {
+        let tempVar = String(format: "%g", temp)
+        return tempVar
     }
    
     @IBAction func calcButtonPressed(_ sender: UIButton) {
